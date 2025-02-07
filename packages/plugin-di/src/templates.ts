@@ -9,11 +9,11 @@ import type { ContentPropertyDescription } from "./types";
 export function buildContentOutputTemplate(
     actionName: string,
     actionDesc: string,
-    properties: Record<string, ContentPropertyDescription>,
-    schema: z.ZodType<any>
+    properties: Record<string, ContentPropertyDescription>
 ): string {
     let propDesc = "";
-    Object.entries(properties).forEach(([key, { description, examples }]) => {
+    const propEntries = Object.entries(properties);
+    for (const [key, { description, examples }] of propEntries) {
         propDesc += `- Field **"${key}"**: ${description}.`;
         if (examples?.length > 0) {
             propDesc += " Examples or Rules for this field:\n";
@@ -23,7 +23,7 @@ export function buildContentOutputTemplate(
         examples?.forEach((example, index) => {
             propDesc += `    ${index + 1}. ${example}\n`;
         });
-    });
+    }
     return `Perform the action: "${actionName}".
 Action description is "${actionDesc}".
 
@@ -33,14 +33,12 @@ ${propDesc}
 
 Use null for any values that cannot be determined.
 
-Respond with a JSON markdown block containing only the extracted values with this structure:
-
-\`\`\`json
-${zodSchemaToJson(schema)}
-\`\`\`
+### Context
 
 Here are the recent user messages for context:
 {{recentMessages}}
+
+Respond with a JSON containing only the extracted values.
 `;
 }
 

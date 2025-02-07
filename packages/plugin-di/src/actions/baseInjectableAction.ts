@@ -70,8 +70,7 @@ export abstract class BaseInjectableAction<T> implements InjectableAction<T> {
                 this.template = buildContentOutputTemplate(
                     this.name,
                     this.description,
-                    properties,
-                    this.contentSchema
+                    properties
                 );
             }
         }
