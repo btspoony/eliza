@@ -18,5 +18,8 @@
         "lint:fix": "biome check --apply src/",
         "format": "biome format src/",
         "format:fix": "biome format --write src/"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

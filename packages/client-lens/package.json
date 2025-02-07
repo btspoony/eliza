@@ -39,5 +39,8 @@
     },
     "peerDependencies": {
         "@elizaos/core": "workspace:*"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

@@ -31,5 +31,8 @@
         "test": "vitest run",
         "test:watch": "vitest",
         "lint": "eslint --fix  --cache ."
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

@@ -48,5 +48,8 @@
     },
     "peerDependencies": {
         "whatwg-url": "7.1.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

@@ -91,5 +91,8 @@
         "together-ai": "0.7.0",
         "unique-names-generator": "4.7.1",
         "uuid": "11.0.3"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

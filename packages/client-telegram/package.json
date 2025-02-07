@@ -32,5 +32,8 @@
         "dev": "tsup --format esm --dts --watch",
         "test": "vitest run",
         "test:watch": "vitest"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

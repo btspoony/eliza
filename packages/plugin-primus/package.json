@@ -29,5 +29,8 @@
         "dev": "tsup --format esm --dts --watch",
         "test": "vitest run",
         "lint": "eslint --fix  --cache ."
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
